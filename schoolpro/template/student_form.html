@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+     <link href="{% static 'regstyles/form.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>Student Information Form</h1>
+
+    <form method="post" action="{% url 'success' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" >
+         <a href="{% url 'home' %}">Back to home</a>
+    </form>
+<script type="text/javascript" src="{% static 'js/update_courses.js' %}"></script>
+</body>
+</html>
